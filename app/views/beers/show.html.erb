@@ -1,2 +1,12 @@
-<h1>Beers#show</h1>
-<p>Find me in app/views/beers/show.html.erb</p>
+<h3><%= @beer.name %> ABV: <%= @beer.abv %>%</h3>
+<h4><%= @beer.brewery.name %></h4>
+<p>How to make it: <%= @beer.recipe.description %></p>
+<p>ingredients</p>
+
+<% @beer.hops.each do |hop| %>
+<p>hops: <%= hop.name %></p>
+<% end %>
+
+<% @beer.malts.each do |malt| %>
+<p>malts: <%= malt.name %></p>
+<% end %>

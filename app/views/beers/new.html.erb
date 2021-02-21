@@ -1,2 +1,6 @@
-<h1>Beers#new</h1>
-<p>Find me in app/views/beers/new.html.erb</p>
+<%= simple_form_for @beer do |f| %>
+<%= f.input :name %>
+<%= f.input :abv %>
+<%= f.association :brewery %>
+<%= f.submit %>
+<% end %>
