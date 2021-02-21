@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_051104) do
+ActiveRecord::Schema.define(version: 2021_02_21_051904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,36 @@ ActiveRecord::Schema.define(version: 2021_02_21_051104) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "hops", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "malts", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipe_hops", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "recipe_id", null: false
+    t.bigint "hop_id", null: false
+    t.index ["hop_id"], name: "index_recipe_hops_on_hop_id"
+    t.index ["recipe_id"], name: "index_recipe_hops_on_recipe_id"
+  end
+
+  create_table "recipe_malts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "malt_id", null: false
+    t.bigint "recipe_id", null: false
+    t.index ["malt_id"], name: "index_recipe_malts_on_malt_id"
+    t.index ["recipe_id"], name: "index_recipe_malts_on_recipe_id"
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
@@ -37,4 +67,8 @@ ActiveRecord::Schema.define(version: 2021_02_21_051104) do
   end
 
   add_foreign_key "beers", "breweries"
+  add_foreign_key "recipe_hops", "hops"
+  add_foreign_key "recipe_hops", "recipes"
+  add_foreign_key "recipe_malts", "malts"
+  add_foreign_key "recipe_malts", "recipes"
 end

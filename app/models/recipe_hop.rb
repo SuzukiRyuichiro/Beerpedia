@@ -1,0 +1,2 @@
+class RecipeHop < ApplicationRecord
+end

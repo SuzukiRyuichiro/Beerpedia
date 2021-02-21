@@ -1,0 +1,2 @@
+class Malt < ApplicationRecord
+end

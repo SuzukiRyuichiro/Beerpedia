@@ -1,0 +1,2 @@
+class RecipeMalt < ApplicationRecord
+end
