@@ -1,0 +1,8 @@
+brewery = Brewery.first
+recipe = Recipe.first
+beer = Beer.first
+hop = Hop.first
+malt = Malt.first
+recipe_hop = RecipeHop.new(recipe: recipe, hop: hop).save
+recipe_malt = RecipeMalt.new(recipe: recipe, malt: malt).save
+
