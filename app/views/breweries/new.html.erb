@@ -1,2 +1,8 @@
-<h1>Breweries#new</h1>
-<p>Find me in app/views/breweries/new.html.erb</p>
+<div class="form-card">
+  <%= simple_form_for @brewery do |f| %>
+  <%= f.input :name %>
+  <div class="submit-button-wrap">
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>

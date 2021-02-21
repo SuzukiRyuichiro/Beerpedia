@@ -1,6 +1,10 @@
-<%= simple_form_for @beer do |f| %>
-<%= f.input :name %>
-<%= f.input :abv %>
-<%= f.association :brewery %>
-<%= f.submit %>
-<% end %>
+<div class="form-card">
+  <%= simple_form_for @beer do |f| %>
+  <%= f.input :name %>
+  <%= f.input :abv %>
+  <%= f.association :brewery %>
+  <div class="submit-button-wrap">
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>

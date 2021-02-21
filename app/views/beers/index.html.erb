@@ -1,14 +1,5 @@
-<#%= @beers.each do |beer| %>
-<!-- <h3><#%= beer.name %> ABV: <#%= beer.abv %>%</h3>
-<p>How to make it: <#%= beer.recipe.description || "" %></p>
-<p>ingredients</p>
+<%= render partial: "components/navbar" %>
 
-<#% beer.hops.each do |hop| %>
-<p>hops: <#%= hop.name %></p>
-<#% end %>
+<%= render partial: "components/beer", collection: @beers %>
 
-<#% beer.malts.each do |malt| %>
-<p>malts: <#%= malt.name %></p>
-<#% end %>
- -->
-<#% end %>
+<%= render partial: "components/footer" %>

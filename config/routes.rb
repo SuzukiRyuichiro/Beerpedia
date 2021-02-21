@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   resources :breweries, only: [:index, :create, :new, :show] do
     resources :beers, only: [:index, :create, :new, :show]
   end
+
+  resources :hops, only: [:create, :new, :show]
+
+  resources :malts, only: [:create, :new, :show]
 end

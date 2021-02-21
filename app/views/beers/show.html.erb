@@ -1,3 +1,6 @@
+<%= render partial: "components/navbar" %>
+
+
 <h3><%= @beer.name %> ABV: <%= @beer.abv %>%</h3>
 <h4><%= @beer.brewery.name %></h4>
 <p>How to make it: <%= @beer.recipe.description %></p>
@@ -10,3 +13,6 @@
 <% @beer.malts.each do |malt| %>
 <p>malts: <%= malt.name %></p>
 <% end %>
+
+
+<%= render partial: "components/footer" %>

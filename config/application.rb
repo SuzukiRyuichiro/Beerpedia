@@ -4,6 +4,9 @@ require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+
+require "action_view/component" # added by me
+
 Bundler.require(*Rails.groups)
 
 module Beerpedia

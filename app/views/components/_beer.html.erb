@@ -1,0 +1,17 @@
+<div class="card" style="width: 18rem;">
+  <img src="" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= beer.name %></h5>
+    <ul>
+      <% beer.hops.each do |hop| %>
+      <li><%= hop.name %></li>
+      <% end %>
+    </ul>
+    <ul>
+      <% beer.malts.each do |malt| %>
+      <li><%= malt.name %></li>
+      <% end %>
+    </ul>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
