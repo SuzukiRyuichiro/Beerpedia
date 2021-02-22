@@ -1,4 +1,4 @@
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem; %">
   <img src="" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"><%= beer.name %></h5>
@@ -12,6 +12,6 @@
       <li><%= malt.name %></li>
       <% end %>
     </ul>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <%= link_to "Details", beer_path(beer), class: "btn btn-dark detail-btn"  %>
   </div>
 </div>
